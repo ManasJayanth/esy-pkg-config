@@ -6,6 +6,7 @@
   "override": {
     "buildEnv": {},
     "build": [
+      "bash -c 'patch -p1 < glib-format-errors.patch'",
       "find ./ -exec touch -t 200905010101 {} +",
       "./configure --disable-debug --prefix=#{self.install} --disable-host-tool --with-internal-glib #{os == 'windows'? '--host x86_64-W64-mingw32': ''}",
       "make -j8"

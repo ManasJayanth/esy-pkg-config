@@ -1,0 +1,35 @@
+From 7e6fcfe70a90e9dfff4da66c7ffa4d6abe701197 Mon Sep 17 00:00:00 2001
+From: Manas Jayanth <3097018+ManasJayanth@users.noreply.github.com>
+Date: Tue, 4 Jul 2023 07:29:45 +0530
+Subject: [PATCH] Fixes -Werror=format errors coming from printing size_t in
+ gslice.c
+
+---
+ glib/glib/gslice.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/glib/glib/gslice.c b/glib/glib/gslice.c
+index e380b9f..283818d 100644
+--- a/glib/glib/gslice.c
++++ b/glib/glib/gslice.c
+@@ -1503,17 +1503,17 @@ smc_notify_free (void   *pointer,
+   found_one = smc_tree_lookup (adress, &real_size);
+   if (!found_one)
+     {
+-      fprintf (stderr, "GSlice: MemChecker: attempt to release non-allocated block: %p size=%" G_GSIZE_FORMAT "\n", pointer, size);
++      fprintf (stderr, "GSlice: MemChecker: attempt to release non-allocated block: %p size=%zx" G_GSIZE_FORMAT "\n", pointer, size);
+       return 0;
+     }
+   if (real_size != size && (real_size || size))
+     {
+-      fprintf (stderr, "GSlice: MemChecker: attempt to release block with invalid size: %p size=%" G_GSIZE_FORMAT " invalid-size=%" G_GSIZE_FORMAT "\n", pointer, real_size, size);
++      fprintf (stderr, "GSlice: MemChecker: attempt to release block with invalid size: %p size=%zx" G_GSIZE_FORMAT " invalid-size=%zx" G_GSIZE_FORMAT "\n", pointer, real_size, size);
+       return 0;
+     }
+   if (!smc_tree_remove (adress))
+     {
+-      fprintf (stderr, "GSlice: MemChecker: attempt to release non-allocated block: %p size=%" G_GSIZE_FORMAT "\n", pointer, size);
++      fprintf (stderr, "GSlice: MemChecker: attempt to release non-allocated block: %p size=%zx" G_GSIZE_FORMAT "\n", pointer, size);
+       return 0;
+     }
+   return 1; /* all fine */
