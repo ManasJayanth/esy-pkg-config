@@ -2,7 +2,7 @@
 
 # esy-pkg-config
 
-`esy-pkg-config` is sample package, [`hello`](https://github.com/esy/test-hello-c), packaged for [`esy`](https://esy.sh/).
+`esy-pkg-config` is sample package, [`gmp`](https://gmplib.org), packaged for [`esy`](https://esy.sh/).
 
 ## Why
 `esy` can not only fetch and install Reason and OCaml libraries and tools,
