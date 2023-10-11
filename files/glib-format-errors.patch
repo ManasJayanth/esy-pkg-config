@@ -1,12 +1,9 @@
-From 7e6fcfe70a90e9dfff4da66c7ffa4d6abe701197 Mon Sep 17 00:00:00 2001
+From 5dbc5a96eee6cee6f96fc9d525b44c8d0c72b53b Mon Sep 17 00:00:00 2001
 From: Manas Jayanth <3097018+ManasJayanth@users.noreply.github.com>
-Date: Tue, 4 Jul 2023 07:29:45 +0530
-Subject: [PATCH] Fixes -Werror=format errors coming from printing size_t in
- gslice.c
+Date: Wed, 11 Oct 2023 18:29:02 +0530
+Subject: [PATCH] Fixes -Werror=format errors coming from printing
+ size_t
 
----
- glib/glib/gslice.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/glib/glib/gslice.c b/glib/glib/gslice.c
 index e380b9f..283818d 100644
@@ -33,3 +30,6 @@ index e380b9f..283818d 100644
        return 0;
      }
    return 1; /* all fine */
+-- 
+2.34.1
+
