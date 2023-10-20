@@ -2,7 +2,7 @@
 
 # esy-pkg-config
 
-`esy-pkg-config` is [`gmp`](https://gmplib.org), packaged for [`esy`](https://esy.sh/).
+`esy-pkg-config` is [`freedesktop's pkg-config`](https://www.freedesktop.org/wiki/Software/pkg-config/), packaged for [`esy`](https://esy.sh/).
 
 ## Why
 `esy` can not only fetch and install Reason and OCaml libraries and tools,
