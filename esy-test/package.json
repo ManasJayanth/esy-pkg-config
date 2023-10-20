@@ -3,6 +3,6 @@
     "build": "which pkg-config"
   },
   "dependencies": {
-    "esy-pkg-config": "0.29.2000"
+    "esy-pkg-config": "0.29.2001"
   }
 }
